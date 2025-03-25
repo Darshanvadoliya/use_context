@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import http from '../../Utils';
 
 function ToggleButton() {
     const [toggleBtn, setToggleBtn] = useState("start")
@@ -8,6 +9,20 @@ function ToggleButton() {
     const [counter, setCounter] = useState(10);
     const [message, setMessage] = useState('');
     const [color, setColor] = useState('lightblue');
+
+    async function getData(){
+        try {
+            let response = await http.get('users')
+            let data = response.data
+            console.log("data",data);
+        } catch (error) {
+            
+        }
+    }
+
+    useEffect(()=>{
+        getData()
+    })
 
     function ToggleBtn() {
         if (toggleBtn === "start") {

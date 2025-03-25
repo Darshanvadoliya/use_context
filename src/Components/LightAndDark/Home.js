@@ -9,7 +9,6 @@ function Home() {
 
     // let {defaultTheme,setTheme,theme} = CustomContext()
     // useEffect(() => {
-       
     // }, [theme])
 
     return (
